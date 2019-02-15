@@ -20,14 +20,23 @@
 import random as r
 
 z = "*"
-print(z*25 + """
+print(z*35 + """
   Welcome to Rock, Paper Scissors!
-""" + z*25)
+""" + z*35)
 
 choices = ["Rock","Paper","Scissors"]       #Array for the choices
 compChoice = choices[r.randint(0,2)]        #Get cpmputer generated selection
-
 playerChoice = input("Enter your choice - [R]ock, [P]aper or [S]cissors: ")
 
-
-#choice[random.randint(0,2)]
+#check player v computer and output response
+print(compChoice)
+if playerChoice == "R":
+    if compChoice == "Rock":
+        print("Draw")
+    elif compChoice == "Paper":
+        print("You lose!")
+    elif compChoice == "Scissors": 
+        print("You win!")
+    
+    
+    #choice[random.randint(0,2)]
