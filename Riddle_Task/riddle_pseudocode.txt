@@ -1,0 +1,20 @@
+Riddle Task Pseudocode
+
+riddle  <- "What has 4 eyes but cannot see? "
+answer  <- "Mississippi"
+userAnswer <- ""
+attempt <- 0
+
+WHILE userAnswer NOT answer DO
+    OUTPUT riddle
+    INPUT userAnswer
+    attempt <- attempt + 1 
+    IF userAnswer == answer THEN
+        IF attempt <= 3 THEN
+            OUTPUT "Well done, you solved my riddle within three guesses"
+        ELSE
+            OUTPUT "Well done"
+        END IF
+    ELSE
+        OUTPUT "You have had", attempts, "attempts."
+    END IF
