@@ -8,8 +8,8 @@ while  userAnswer != answer:
     attempt += 1
     if userAnswer == answer:
         print("well done")
-        while attempt <= 3
-            print("well done!!!!!")
+        if attempt <= 3:                  # take a look at this line...
+                print("well done!!!!!")
             
     else:
         print("sorry,thats not the answer")
