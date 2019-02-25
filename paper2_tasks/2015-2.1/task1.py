@@ -21,13 +21,14 @@ midnight = []
 def validTemp(message):
   while True:                                           #Thie creates an infinite loop!
     try:
-       temp = float(input(message))       
+       temp = float(input(message))
+
     except ValueError:                                  #If ValueError occurs it will print the message and continue the loop (it's infinite!)
        print("Not an valid number! Try again.")
        continue
     else:                                               #If no error then the value is returned and the loop breaks
-       return temp 
-       break 
+       return temp
+       
 
 for i in range (0,3):                                   #Loop through the list
     midday.append(validTemp("Enter Temperature: "))     #Capture user input via validTemp function

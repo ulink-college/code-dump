@@ -9,7 +9,10 @@
 import random
 
 # Change the riddle and answer variables in to lists and populate with data
-riddle = ["What has 4 eyes but cannot see? ", "What will break when you say its name? ", "The more you take, the more you leave behind. What are they? "]
+riddle = ["What has 4 eyes but cannot see? ", 
+"What will break when you say its name? ", 
+"The more you take, the more you leave behind. What are they? "]
+
 answer = ["Mississippi","Silence","Footsteps"]
 
 userAnswer = ""

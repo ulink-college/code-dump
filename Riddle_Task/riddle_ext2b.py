@@ -17,7 +17,7 @@ again = "Y"
 
 while again == "Y":
     userAnswer = ""
-    choice = random.randint(0,2)        #  use this variable to generate and store a number. This will be used for the list index
+    choice = random.randint(0,len(riddle)-1)        #  use this variable to generate and store a number. This will be used for the list index
     print(choice)
     while userAnswer != answer[choice]:
         userAnswer = input(riddle[choice])
@@ -27,5 +27,6 @@ while again == "Y":
         else:
             print("Sorry, that's not it.")
             print("You have had", attempt, "attempts.")
+    riddle.pop(choice)
     again = input("Play again? Y or N: ").upper()
 

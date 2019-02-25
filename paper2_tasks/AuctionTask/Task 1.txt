@@ -1,0 +1,29 @@
+#Task 1
+# Dinesh Kumar P, IBDP Facilitator, Indus International School
+
+no_of_Item=input("Enter the number of Item")
+Item_Number[no_of_Item] as Integer
+description[no_of_Item] as String
+reserve_price[no_of_Item] as Integer/Real
+biding[no_of_Item] as Integer
+
+For count= 0 to no_of_items-1
+	Item_num=Input("Enter the Item Number")
+ 
+	q=1
+
+	Do
+		While Item_num==Item_Number[q]
+			Item_num=Input("Already Exist, Reenter the Item Number")
+			q=0
+		EndWhile
+
+ 	q=q+1
+
+ 	While (q<count)
+
+	Item_Number[count]=Item_num
+	description[count]=input("Enter product description")
+	reserve_price[count]=input("Enter reserve price")
+	biding[count]=0
+Next count
