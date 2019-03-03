@@ -15,6 +15,36 @@ midnight = []
 #loop thorugh arrays collecting input
 FOR i <- 0 TO DAYS 
     INPUT midday[day]
+            #Need data validation
+    INPUT midnight[day]
+NEXT
+
+
+#Check arrays:
+OUTPUT midday
+OUTPUT midnight
+
+
+#Data validation:
+# use IF..ELIF..ELSE
+# type casting: what happens if you try to cast a string (abc) to a float?
+    exception thrown...what happens? How to avoid/fix? - exception handling
+
+
+-------------------------------------------------------------
+
+Pseudocode:
+-----------
+
+DAYS <- 30      
+
+midday = []     #Use for float values
+midnight = []
+
+#loop thorugh arrays collecting input
+FOR i <- 0 TO DAYS 
+    INPUT midday[day]
+            #Need data validation
     INPUT midnight[day]
 NEXT
 

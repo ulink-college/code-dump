@@ -12,19 +12,20 @@
 # temperatures must be validated on entry and any invalid temperatures rejected. You must decide your
 # own validation rules. You may assume that there are 30 days in a month.
 
-midday = []
-midnight = []
+middayTemp = []
+midnightTemp = []
 total = 0
 
 for i in range (0,5):
-    x = int(input("#: "))
-    midday.append(x)
-print(midday)
+    middayTemp.append(float(input("Enter midday temperature: ")))
+    midnightTemp.append(float(input("Enter midday temperature: ")))
+print("Miday Temps:",middayTemp)
+print("Midnight Temps:",midnightTemp)
 
 for i in range(0,5):
-    total = total + midday[i]
+    total = total + middayTemp[i]
 print(total)
 
-print(sum(midday))
+print(sum(middayTemp))
 
 
