@@ -1,0 +1,40 @@
+#############################################
+# CIE IGCSE CS Paper 2
+# June 2015 0478/21
+#
+# Sample Answer by Mr Farren
+#
+#Task 1:
+# A data logger records the temperature on the roof of a school twice a day, at midday and midnight.
+# Input and store the temperatures recorded for a month. You must store the temperatures in two onedimensional
+# arrays, one for the midday temperatures and one for the midnight temperatures. All the
+# temperatures must be validated on entry and any invalid temperatures rejected. You must decide your
+# own validation rules. You may assume that there are 30 days in a month.
+
+DAYS <-- 30
+middayTemp <-- []
+midnightTemp <--  []
+temperature <--  0
+
+FOR day <-- 0 TO 3:
+    isValid <-- False
+    WHILE isValid == False:
+        DO
+            temperature <-- INPUT "Enter midday temperature: "
+            IF temperature < -10 OR temperature > 60:
+                THEN
+                    print("Out of range!")
+            ELSE:
+                THEN
+                    middayTemp.append(temperature)
+                    isValid = True
+    
+    isValid <-- False
+    WHILE isValid == False DO
+        temperature = float(input("Enter midnight temperature: "))
+        IF temperature < -10 OR temperature > 60:
+            THEN
+                print("Out of range!")
+        ELSE:
+            midnightTemp.append(temperature)
+            isValid = True

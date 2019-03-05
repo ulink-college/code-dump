@@ -20,6 +20,9 @@ midnight = []
 class OutOfRange(Exception):
    pass
 
+too_high = Exception("Value out of range - too high")
+too_low = Exception("Value out of range - too low")
+
 def validTemp(message):
   while True:                                           #Thie creates an infinite loop!
     try:
