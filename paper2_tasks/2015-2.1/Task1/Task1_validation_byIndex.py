@@ -20,31 +20,23 @@ day = 0
 for day in range (0,3):
     isValid = False
     while isValid == False:
-        #temperature = float(input("Enter midday temperature: "))
         middayTemp[day] = float(input("Enter midday temperature: "))
-        #middayTemp.append(float(input("Enter midday temperature: ")))
-
         if middayTemp[day] < -10.0:
             print("Out of range - too low")
         elif middayTemp[day] > 60.0:
             print("Out of range - too high")
         else:
-            #middayTemp.append(temperature)
             isValid = True
     isValid = False
     while isValid == False:
-        #temperature = float(input("Enter midday temperature: "))
         midnightTemp[day] = float(input("Enter midnight temperature: "))
-        #middayTemp.append(float(input("Enter midday temperature: ")))
-
         if midnightTemp[day] < -10.0:
             print("Out of range - too low")
         elif midnightTemp[day] > 60.0:
             print("Out of range - too high")
         else:
-            #middayTemp.append(temperature)
             isValid = True
-    #midnightTemp.append(float(input("Enter midnight temperature: ")))
+
 print("Miday Temps:",middayTemp)
 print("Midnight Temps:",midnightTemp)
 

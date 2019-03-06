@@ -1,4 +1,4 @@
-days = (30)
+days = (3)
 midday_temp = []
 midnight_temp = []
 n = 0
