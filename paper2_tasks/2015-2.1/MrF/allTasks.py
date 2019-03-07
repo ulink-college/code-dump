@@ -14,7 +14,7 @@
 # USING .append() and a seperate 'input' variable
 
 #Define variables and constants
-DAYS =5
+DAYS = 5
 middayTemp = []
 midnightTemp = []
 temperature = 0
@@ -23,7 +23,8 @@ day = 0
 for day in range (0,DAYS):
     isValid = False
     while isValid == False:
-        temperature = float(input("Enter midday temperature: "))
+        #temperature = float(input("Enter midday temperature: "))   #Commented out to reduce screen clutter in testing!
+        temperature = float(input())
         if temperature < -10.0:
             print("Out of range - too low")
         elif temperature > 60.0:
@@ -33,7 +34,8 @@ for day in range (0,DAYS):
             isValid = True
     isValid = False
     while isValid == False:
-        temperature = float(input("Enter midnight temperature: "))
+        #temperature = float(input("Enter midnight temperature: "))     #Commented out to reduce screen clutter in testing!
+        temperature = float(input())
         if temperature < -10.0:
             print("Out of range - too low")
         elif temperature > 60.0:
@@ -46,31 +48,16 @@ print("Midnight Temps:",midnightTemp)
 
 
 #TASK 2:
-middayAverage = 0.0
-midnightAverage = 0.0
 
-middayAverage = sum(middayTemp)/len(middayTemp)
-midnightAverage = sum(midnightTemp)/len(midnightTemp)
-
-print("Average midday temperature: %.2f" % middayAverage)       #Produces a string output formatted with 2 decimal places
-#print("Average midday temperature:", round(middayAverage,2))       #Produces a float
-
-print("Average midnight temperature:", round(midnightAverage,2))       #Produces a float
-
-
-
-#Alternative method
 middayTotal = 0.0
 midnightTotal = 0.0
-
 for i in range(0,DAYS):
     middayTotal = middayTotal + middayTemp[i]
     midnightTotal = midnightTotal + midnightTemp[i]
 middayAverage = middayTotal / DAYS
 midnightAverage = midnightTotal / DAYS
-print(round(middayAverage,2))
-print(round(midnightAverage,2))
-
+print("Average midday temperature: %.2f" % middayAverage)       #Produces a string output formatted with 2 decimal places
+print("Average midnight temperature:", round(midnightAverage,2))       #Produces a float
 
 a = 0
 hotDays = []
@@ -81,13 +68,28 @@ for i in middayTemp:
 #Find the value in the list and store the index
 for i in range(0,DAYS):
     if a == middayTemp[i]:
-        hotDays.append(i+1)
+        hotDays.append(i)
 
 if len(hotDays) > 1:
-    print("The hottest days were:")
+    print("The hottest days at %.1f\u00b0C" % middayTemp[hotDays[0]])
     for i in hotDays:
-        print(i)
+        print(i+1)
 else:
-    print("The hottest day was:", hotDays[0]z)
-print(hotDays)
+    print("The hottest day was day %d at %.1f\u00b0C" % (hotDays[0]+1,middayTemp[hotDays[0]]))
 
+coolDays = []
+#Find highest value
+for i in midnightTemp:
+    if i < a:
+        a = i
+#Find the value in the list and store the index
+for i in range(0,DAYS):
+    if a == midnightTemp[i]:
+        coolDays.append(i)
+
+if len(coolDays) > 1:
+    print("The coolest days at %.1f\u00b0C" % midnightTemp[coolDays[0]] )
+    for i in coolDays:
+        print(i+1)
+else:
+    print("The coolest day was day %d at %.1f\u00b0C" % (coolDays[0]+1,midnightTemp[coolDays[0]]))
