@@ -100,6 +100,6 @@ if len(hotDays) > 1:
     for i in hotDays:
         print(i)
 else:
-    print("The hottest day was:", hotDays[0]z)
+    print("The hottest day was:", hotDays[0])
 print(hotDays)
 

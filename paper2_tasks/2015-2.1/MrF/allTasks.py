@@ -21,8 +21,7 @@ day = 0
 for day in range (0,DAYS):
     invalid = True
     while invalid:
-        temperature = float(input("Enter midday temperature: "))   #Commented out to reduce screen clutter in testing!
-        #temperature = float(input())
+        temperature = float(input("Enter midday temperature: "))   
         if temperature < -10.0:
             print("Out of range - too low")
         elif temperature > 60.0:
@@ -32,8 +31,7 @@ for day in range (0,DAYS):
             invalid = False
     invalid = True
     while invalid:
-        temperature = float(input("Enter midnight temperature: "))     #Commented out to reduce screen clutter in testing!
-        #temperature = float(input())
+        temperature = float(input("Enter midnight temperature: "))
         if temperature < -10.0:
             print("Out of range - too low")
         elif temperature > 60.0:

@@ -56,7 +56,6 @@ print("Average midday temperature: %.2f" % middayAverage)       #Produces a stri
 print("Average midnight temperature:", round(midnightAverage,2))       #Produces a float
 
 
-
 #For Testing
 middayTotal = 0.0
 midnightTotal = 0.0
