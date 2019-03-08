@@ -14,13 +14,12 @@
 # USING .append() and a seperate 'input' variable
 
 #Define variables and constants
-DAYS =30
+DAYS =3
 middayTemp = []
 midnightTemp = []
 temperature = 0
-day = 0
 
-for day in range (0,3):
+for day in range (0,DAYS):
     isValid = False
     while isValid == False:
         temperature = float(input("Enter midday temperature: "))
