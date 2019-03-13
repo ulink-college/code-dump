@@ -43,47 +43,24 @@ print("Miday Temps:",middayTemp)        # For debugging to check that values are
 print("Midnight Temps:",midnightTemp)
 
 #TASK 2:
+#
+#-------------------------
 
+#set initial variables
 middayTotal = 0.0
 midnightTotal = 0.0
+
+# Get sum of all temps
 for i in range(0,DAYS):
-    middayTotal = middayTotal + middayTemp[i]
+    middayTotal = middayTotal + middayTemp[i]                   
     midnightTotal = midnightTotal + midnightTemp[i]
-middayAverage = middayTotal / DAYS
+
+# Calculate the average
+middayAverage = middayTotal / DAYS                              #Divide by number of days
 midnightAverage = midnightTotal / DAYS
-print("Average midday temperature: %.2f" % middayAverage)       #Produces a string output formatted with 2 decimal places
-print("Average midnight temperature: %.2f" % midnightAverage)       
 
-a = 0
-hotDays = []
-#Find highest value
-for i in middayTemp:
-    if i > a:
-        a = i
-#Find the value in the list and store the index
-for i in range(0,DAYS):
-    if a == middayTemp[i]:
-        hotDays.append(i)
-if len(hotDays) > 1:
-    print("The hottest days at %.1f\u00b0C" % middayTemp[hotDays[0]])
-    for i in hotDays:
-        print(i+1)
-else:
-    print("The hottest day was day %d at %.1f\u00b0C" % (hotDays[0]+1,middayTemp[hotDays[0]]))
-
-coolDays = []
-#Find highest value
-for i in midnightTemp:
-    if i < a:
-        a = i
-#Find the value in the list and store the index
-for i in range(0,DAYS):
-    if a == midnightTemp[i]:
-        coolDays.append(i)
-if len(coolDays) > 1:
-    print("The coolest days at %.1f\u00b0C" % midnightTemp[coolDays[0]] )
-    for i in coolDays:
-        print(i+1)
-else:
-    print("The coolest day was day %d at %.1f\u00b0C" % (coolDays[0]+1,midnightTemp[coolDays[0]]))
-
+#Output results to display with suitable prompts and formatting
+print("Average midday temperature: %.1f" % middayAverage)       #Produces a string output formatted with 2 decimal places
+print("Average midnight temperature: %.1f" % midnightAverage)       
+print(middayAverage)
+print(midnightAverage)

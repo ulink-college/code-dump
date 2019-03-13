@@ -18,7 +18,6 @@ for i in range(0,ITEMS):
             else:
                 software.append(part)
                 isValid = True
-
 print(computerParts)
 print(software)
 

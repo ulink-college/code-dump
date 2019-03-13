@@ -55,13 +55,25 @@ Finding largest and smallest using a sort
 ''')
 
 sortedList = myNumbers.copy()        #This is to keep the original list unchanged so it can be used later (might be useful)
-sortedList.sort()                    #Sort the new list in numeric order
+sortedList.sort()    
+print("Original:",myNumbers)
+print("Sorted:", sortedList)                #Sort the new list in numeric order
 print("Largest:",sortedList[-1])     #selects last value
 print("Smallest:",sortedList[0])
-
+print("Largest value index:",myNumbers.index(sortedList[-1]))
+print("Smallest value index:",myNumbers.index(sortedList[0]))
 
 a = 0
 for i in myNumbers:
     if i > a:
         a = i
 print("Largest",a)
+
+a = 0
+z = []
+for i in range(0,len(myNumbers)):
+    if myNumbers[i] > a:
+        z.append(myNumbers[i])
+
+print("Largest",a)
+print("Largest",z)

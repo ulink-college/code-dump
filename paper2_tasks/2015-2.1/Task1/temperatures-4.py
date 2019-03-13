@@ -29,18 +29,26 @@ temperature = 0.0   #variable to collect user input
 # Write the code here to ask the user for the temperature and then add this to the correct list and repeat
 
 for i in range(0,DAYS):
-    temperature = float(input("Enter midday temperature: "))
-    if temperature < -10:
-        print("Value out of range - too low")
-    elif temperature > 60:
-        print("Value out of range - too high")
-    else:
-        middayTemperature.append(temperature)
+    invalidData = True
+    while invalidData:
+        temperature = float(input("Enter midday temperature: "))
+        if temperature < -10:
+            print("Value out of range - too low")
+        elif temperature > 60:
+            print("Value out of range - too high")
+        else:
+            middayTemperature.append(temperature)
+            invalidData = False
+    invalidData = True       
+    while invalidData:
+        temperature = float(input("Enter midnight temperature: "))
+        if temperature < -10:
+            print("Value out of range - too low")
+        elif temperature > 60:
+            print("Value out of range - too high")
+        else:
+            midnightTemperature.append(temperature)
+            invalidData = False
 
-    temperature = float(input("Enter midnight temperature: "))
-    if temperature < -10:
-        print("Value out of range - too low")
-    elif temperature > 60:
-        print("Value out of range - too high")
-    else:
-        midnightTemperature.append(temperature)
+print(middayTemperature)
+print(midnightTemperature)
