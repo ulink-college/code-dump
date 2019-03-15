@@ -19,7 +19,7 @@ middayTemperature = []
 midnightTemperature = []
 
 #Add any other variables or constants you might need:
-DAYS = 3
+DAYS = 30
 temperature = 0.0   #variable to collect user input
 
 

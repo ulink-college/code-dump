@@ -49,12 +49,14 @@ midnightTotal = 0.0
 for i in range(0,DAYS):
     middayTotal = middayTotal + middayTemp[i]
     midnightTotal = midnightTotal + midnightTemp[i]
+
 middayAverage = middayTotal / DAYS
 midnightAverage = midnightTotal / DAYS
-print("Average midday temperature: %.2f" % middayAverage)       #Produces a string output formatted with 2 decimal places
-print("Average midnight temperature: %.2f" % midnightAverage)       
 
-a = 0
+print("Average midday temperature:",  middayAverage)       #Unformatted
+print("Average midnight temperature: %.2f" % midnightAverage)  #Produces a string output formatted with 2 decimal places       
+
+a = -11     # lowest number accepted in earlier validation
 hotDays = []
 #Find highest value
 for i in middayTemp:
@@ -67,12 +69,16 @@ for i in range(0,DAYS):
 if len(hotDays) > 1:
     print("The hottest days at %.1f\u00b0C" % middayTemp[hotDays[0]])
     for i in hotDays:
-        print(i+1)
+        print("Day",i+1)
 else:
     print("The hottest day was day %d at %.1f\u00b0C" % (hotDays[0]+1,middayTemp[hotDays[0]]))
 
+# *****
+
+# ******
 coolDays = []
 #Find highest value
+a = 61      #60 is the largest number accepted in earlier validation
 for i in midnightTemp:
     if i < a:
         a = i

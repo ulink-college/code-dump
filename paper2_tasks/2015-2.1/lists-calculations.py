@@ -3,7 +3,7 @@ print('''
 **************************
 Totalling using sum()
 **************************''')
-myNumbers = [6,1,3,2,3,2,1,5,4,5,1,1]
+myNumbers = [1,3,2,6,3,2,1,5,4,5,1,1]
 print("List Content:",myNumbers)
 print("Total:",sum(myNumbers))
 
@@ -62,6 +62,8 @@ print("Largest:",sortedList[-1])     #selects last value
 print("Smallest:",sortedList[0])
 print("Largest value index:",myNumbers.index(sortedList[-1]))
 print("Smallest value index:",myNumbers.index(sortedList[0]))
+print(myNumbers)
+print("High:",myNumbers.index(sortedList[-1]))
 
 a = 0
 for i in myNumbers:
