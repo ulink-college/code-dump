@@ -16,25 +16,32 @@ DAYS = 5
 middayTemp = []
 midnightTemp = []
 temperature = 0
+lowTemp = -10.0
+highTemp = 60.0
 day = 0
 
 for day in range (0,DAYS):
     invalid = True
     while invalid:
-        temperature = float(input("Enter midday temperature: "))   
-        if temperature < -10.0:
-            print("Out of range - too low")
-        elif temperature > 60.0:
-            print("Out of range - too high")
-        else:
-            middayTemp.append(temperature)
-            invalid = False
+        try:
+            temperature = float(input("Enter midday temperature: "))   
+        except ValueError:
+            print("Not an valid number! Try again.")
+             #continue
+    
+            if temperature < lowTemp:
+                print("Out of range - too low")
+            elif temperature > highTemp:
+                print("Out of range - too high")
+            else:
+                middayTemp.append(temperature)
+                invalid = False
     invalid = True
     while invalid:
         temperature = float(input("Enter midnight temperature: "))
-        if temperature < -10.0:
+        if temperature < lowTemp:
             print("Out of range - too low")
-        elif temperature > 60.0:
+        elif temperature > highTemp:
             print("Out of range - too high")
         else:
             midnightTemp.append(temperature)
@@ -53,18 +60,21 @@ for i in range(0,DAYS):
 middayAverage = middayTotal / DAYS
 midnightAverage = midnightTotal / DAYS
 
-print("Average midday temperature:",  middayAverage)       #Unformatted
+print("Average midday temperature:", round(middayAverage,1))       # 
 print("Average midnight temperature: %.2f" % midnightAverage)  #Produces a string output formatted with 2 decimal places       
 
-a = -11     # lowest number accepted in earlier validation
 hotDays = []
+coolDays = []
+
 #Find highest value
-for i in middayTemp:
-    if i > a:
-        a = i
+x = lowTemp
+for i in range (0,DAYS):
+    if middayTemp[i] > x:
+        x = middayTemp[i]
+
 #Find the value in the list and store the index
 for i in range(0,DAYS):
-    if a == middayTemp[i]:
+    if x == middayTemp[i]:
         hotDays.append(i)
 if len(hotDays) > 1:
     print("The hottest days at %.1f\u00b0C" % middayTemp[hotDays[0]])
@@ -76,16 +86,18 @@ else:
 # *****
 
 # ******
-coolDays = []
-#Find highest value
-a = 61      #60 is the largest number accepted in earlier validation
-for i in midnightTemp:
-    if i < a:
-        a = i
+#Find lowest value
+x = highTemp
+for i in range(0,DAYS):
+    if midnightTemp[i] < x:
+        x = midnightTemp[i]
+        
+
 #Find the value in the list and store the index
 for i in range(0,DAYS):
-    if a == midnightTemp[i]:
+    if x == midnightTemp[i]:
         coolDays.append(i)
+
 if len(coolDays) > 1:
     print("The coolest days at %.1f\u00b0C" % midnightTemp[coolDays[0]] )
     for i in coolDays:

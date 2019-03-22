@@ -1,48 +1,71 @@
 #############################################
 # CIE IGCSE CS Paper 2
 # June 2015 0478/21
-#
 # Sample Answer by Mr Farren
-#***Task 1:***
-# A data logger records the temperature on the roof of a school twice a day, at midday and midnight.
-# Input and store the temperatures recorded for a month. You must store the temperatures in two onedimensional
-# arrays, one for the midday temperatures and one for the midnight temperatures. All the
-# temperatures must be validated on entry and any invalid temperatures rejected. You must decide your
-# own validation rules. You may assume that there are 30 days in a month.
-
 DAYS = 5
 middayTemperature = [0.0] * DAYS
 midnightTemperature = [0.0] * DAYS
+lowTemp, highTemp = -10.0, 60.0
 
-#Function to check if the temperature is a valid float
-# Uses error catching. Goes in to a loop, then tries the input code
-# If any input is entered that can not be converted to a float ValueError with be thrown
 def validTemp(message):
    while True:                                           #Thie creates an infinite loop!
       try:
          temp = float(input(message))
       except ValueError:                                  #If ValueError occurs it will print the message and continue the loop (it's infinite!)
          print("Not an valid number! Try again.")
-         #continue
-      else:
-         if temp < -5.0:
+      else:                                              #If data type is ok, check within range
+         if temp < lowTemp:
             print("Too low")
-         elif temp > 60.0:
+         elif temp > highTemp:
             print("too high")
          else:                                               
             return temp                                  #If no error then the value is returned and the loop breaks
        
-def averageTemp(temperatures):
+def averageTemp(temperatures):                           #Function: Calculate average temperatures using a loop
    total = 0.0
    for i in range(0,DAYS):
       total = total + temperatures[i]
    tempAverage = total / DAYS
    return tempAverage
 
+def highLowTemps(md, mn ):
+   #Find highest value
+   x, y = lowTemp, highTemp
+   middayTemp, midnightTemp = md, mn
+   hotDays = []
+   coolDays = []
+   while True:
+      for i in range (0,DAYS):
+         if middayTemp[i] > x:
+            x = middayTemp[i]
+         if midnightTemp[i] < y:
+            y = midnightTemp[i]
+      for i in range(0,DAYS):
+         if x == middayTemp[i]:
+            hotDays.append(i)
+         if y == midnightTemp[i]:
+            coolDays.append(i)
+      break
+   if len(coolDays) == 1:
+      print("\nThe coolest day was day %d at %.1f\u00b0C" % (coolDays[0]+1,midnightTemp[coolDays[0]]))
+   else:
+      print("\nThe coolest days at %.1f\u00b0C" % midnightTemp[coolDays[0]] )
+      for i in coolDays:
+         print(i+1)
+   if len(hotDays) == 1:
+      print("The hottest day was day %d at %.1f\u00b0C" % (hotDays[0]+1,middayTemp[hotDays[0]]))
+   else:
+      print("The hottest days were %.1f\u00b0C" % middayTemp[hotDays[0]] )
+      print("They were:")
+      for i in hotDays:
+         print("    day",i+1)
+
+
 for i in range (0,DAYS):                                   #Loop through the list
     middayTemperature[i] = validTemp("Enter midday temperature: ")    #Capture user input via validTemp function
     midnightTemperature[i] = validTemp("Enter midnight temperature: ")
 
-print("Average midday temperature: %.2f" % averageTemp(middayTemperature))       #Produces a string output formatted with 2 decimal places
+print("\nAverage midday temperature: %.2f" % averageTemp(middayTemperature))       #Produces a string output formatted with 2 decimal places
 print("Average midnight temperature: %.2f" % averageTemp(midnightTemperature))       #Produces a string output formatted with 2 decimal places
+highLowTemps(middayTemperature,midnightTemperature)
 
