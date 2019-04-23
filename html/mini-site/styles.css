@@ -1,0 +1,32 @@
+body{
+    margin: 0px;
+    font-family: sans-serif;
+}
+a {
+    color: #0000ff;
+    font-variant: small-caps;
+}
+
+nav {
+    background-color: #000000;
+    padding: 10px;
+}
+
+nav a {
+    color: #ffffff;
+}
+nav a:hover {
+    background-color: #8a2be2;
+}
+
+h1 {
+    color: darkviolet;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: oblique;
+}
+
+.codeExample{
+    font-family: monospace;
+    background-color: #bebebe;
+    width: 30%;
+}
